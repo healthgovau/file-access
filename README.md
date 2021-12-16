@@ -28,4 +28,9 @@ Department of Health and Department of Agriculture are collaborating on a soluti
 
  - Anonymous users should not be able to access files (media entities) that are not connected to a published revision of a node entity
  - Logged in uses should always be able to access files
- - 
+
+## Solutions
+
+ - Move files between the public and private system depending on whether they should be accessible to the public
+ - When entities are created, updated or deleted, check related media and make sure they are in the correct file system
+ - Should support revisions and moderation on nodes and media entities, including reverting revisions
