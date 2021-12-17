@@ -12,7 +12,10 @@ Department of Health and Department of Agriculture are collaborating on a soluti
 ## Drupal file issues
 
  - [Dealing with unexpected file deletion due to incorrect file usage](https://www.drupal.org/project/drupal/issues/2821423)
-
+ - [Track media usage](https://www.drupal.org/project/drupal/issues/2835840)
+ - [Make private file access handling respect the full entity reference chain](https://www.drupal.org/project/drupal/issues/2904842)
+ - [Unpublished content and attachments should be kept private](https://www.drupal.org/project/drupal/issues/1836080)
+ - [Permissions by Entity affected by cache](https://www.drupal.org/project/permissions_by_term/issues/3222563), potentionally redundant with Permissions by Term removed from GovCMS 9
 
 ## User stories
 
@@ -33,4 +36,4 @@ Department of Health and Department of Agriculture are collaborating on a soluti
 
  - Move files between the public and private system depending on whether they should be accessible to the public
  - When entities are created, updated or deleted, check related media and make sure they are in the correct file system
- - Should support revisions and moderation on nodes and media entities, including reverting revisions
+ - Should support revisions and moderation on nodes and media entities, including reverting revisions and support for paragraphs
