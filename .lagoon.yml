@@ -1,0 +1,91 @@
+---
+docker-compose-yaml: docker-compose.yml
+environments:
+  master:
+    cronjobs:
+      - 
+        name: Drupal cron with notifications
+        schedule: 'M * * * *'
+        command: >
+          /app/vendor/bin/govcms-drush cron
+          --root=/app
+        service: cli
+    routes:
+      - 
+        nginx:
+          - 
+            filem.govcms.gov.au:
+              tls-acme: 'true'
+    monitoring_urls:
+      - filem.govcms.gov.au
+tasks:
+  pre-rollout:
+    - 
+      run:
+        name: Pre-rollout database updates
+        command: "[ -f /app/vendor/bin/govcms-pre-deploy-db-update ] && /app/vendor/bin/govcms-pre-deploy-db-update || echo 'Pre Update databse is not available.'"
+        service: cli
+        shell: bash
+    - 
+      run:
+        name: Snapshot the database and store
+        command: "[ -f /app/vendor/bin/govcms-db-backup ] && /app/vendor/bin/govcms-db-backup || echo 'Database backup is not available.'"
+        service: cli
+        shell: bash
+    - 
+      run:
+        name: Snapshot the config and store
+        command: "[ -f /app/vendor/bin/govcms-config-backup ] && /app/vendor/bin/govcms-config-backup || echo 'Config backup is not available.'"
+        service: cli
+        shell: bash
+  post-rollout:
+    - 
+      run:
+        name: Prepare the site for deployment
+        command: /app/vendor/bin/govcms-update_site_alias
+        service: cli
+        shell: bash
+    - 
+      run:
+        name: Perform GovCMS platform validations
+        command: '[ "${GOVCMS_SKIP_AUDIT}" = "true" ] && echo "Audit skipped." || /app/vendor/bin/govcms-ship-shape -an'
+        service: cli
+        shell: bash
+    - 
+      run:
+        name: Synchronise the database
+        command: /app/vendor/bin/govcms-db-sync
+        service: cli
+        shell: bash
+    - 
+      run:
+        name: Perform database updates
+        command: /app/vendor/bin/govcms-db-update
+        service: cli
+        shell: bash
+    - 
+      run:
+        name: Perform config import
+        command: /app/vendor/bin/govcms-config-import
+        service: cli
+        shell: bash
+    - 
+      run:
+        name: Perform cache rebuild
+        command: /app/vendor/bin/govcms-cache-rebuild
+        service: cli
+        shell: bash
+    - 
+      run:
+        name: Ensure GovCMS/Lagoon modules are enabled
+        command: /app/vendor/bin/govcms-enable_modules
+        service: cli
+        shell: bash
+    - 
+      run:
+        name: Preserve the last successful backup
+        command: /app/vendor/bin/govcms-backups-preserve
+        service: cli
+        shell: bash
+routes:
+  insecure: Redirect

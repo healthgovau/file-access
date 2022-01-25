@@ -1,0 +1,12 @@
+##
+# @see  https://govcms.gov.au/wiki-advanced#docker
+#
+
+ARG CLI_IMAGE
+ARG GOVCMS_IMAGE_VERSION=9.x-latest
+
+FROM ${CLI_IMAGE} as cli
+FROM govcms/nginx-drupal:${GOVCMS_IMAGE_VERSION}
+
+ENV WEBROOT=web
+COPY --from=cli /app/web /app/web
