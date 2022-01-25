@@ -1,0 +1,23 @@
+uuid: 7ea3a781-303b-49bd-a44a-d1cfc9c942ca
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: wzv_jc8ps2zUHvgEblatfCj7ORVyjDoucm3GLmzxK3g
+id: news_and_media
+label: 'News and Media'
+type: 'canonical_entities:node'
+pattern: 'news-and-media/[node:title]'
+selection_criteria:
+  d780c6f8-8995-47cf-ac48-0edb7e55d92d:
+    id: node_type
+    bundles:
+      govcms_news_and_media: govcms_news_and_media
+    negate: false
+    context_mapping:
+      node: node
+selection_logic: and
+weight: -5
+relationships: {  }

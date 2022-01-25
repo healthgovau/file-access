@@ -1,0 +1,25 @@
+uuid: ec10d87e-5cca-40f7-a9dc-4806e054882b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.govcms_blog_article
+  module:
+    - text
+_core:
+  default_config_hash: vnIm-aZAoRART0MbL6vdBb1HkNoumW37xQv5QOgzXhA
+id: node.govcms_blog_article.body
+field_name: body
+entity_type: node
+bundle: govcms_blog_article
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

@@ -1,0 +1,10 @@
+uuid: 2bf21dff-564c-442f-b0b4-7f796f76714c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: kApqBTu75t7OJ37AU8AoPBQpj7eJcc82DVCRZrZDDDA
+id: govcms-community
+label: Community
+description: 'GovCMS Community'
+locked: false

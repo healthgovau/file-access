@@ -1,0 +1,23 @@
+uuid: 372108f5-8311-477b-b9a6-793387cb415f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: cO3M8kID8_IL3dRTFEtI6Nef02QUN1WgqjWm2Ps2RRU
+id: event
+label: Event
+type: 'canonical_entities:node'
+pattern: 'events/[node:title]'
+selection_criteria:
+  3c4c0c98-2ed6-4a04-9067-1a97c961a5f0:
+    id: node_type
+    bundles:
+      govcms_event: govcms_event
+    negate: false
+    context_mapping:
+      node: node
+selection_logic: and
+weight: -5
+relationships: {  }

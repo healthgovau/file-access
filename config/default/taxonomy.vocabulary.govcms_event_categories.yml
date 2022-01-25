@@ -1,0 +1,10 @@
+uuid: ed1d3c05-8468-4dfb-88eb-63e092603842
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: qojtTnDLkkz7OPiEhoDS2OK6Q9OJ9_COZ43Jd3KtG74
+name: 'Event categories'
+vid: govcms_event_categories
+description: ''
+weight: 0

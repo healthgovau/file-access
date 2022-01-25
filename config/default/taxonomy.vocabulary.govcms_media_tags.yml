@@ -1,0 +1,10 @@
+uuid: 8d6ff4d8-e64c-45c6-9ef1-9d09551514bd
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: lWpzD-OfisMqW-7Oml2NEOtcwHW7Z2TTWxqHgFV25dA
+name: 'Media tags'
+vid: govcms_media_tags
+description: ''
+weight: 0

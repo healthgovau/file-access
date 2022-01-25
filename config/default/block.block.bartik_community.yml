@@ -1,0 +1,27 @@
+uuid: e1604ccf-b8d2-4239-a771-38d5f7f99bca
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.govcms-community
+  module:
+    - system
+  theme:
+    - bartik
+_core:
+  default_config_hash: 9R-5Xpqf41fgESEgSvUdRGih3JmiNp-5rGbzam7wgQw
+id: bartik_community
+theme: bartik
+region: footer_second
+weight: 0
+provider: null
+plugin: 'system_menu_block:govcms-community'
+settings:
+  id: 'system_menu_block:govcms-community'
+  label: Community
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

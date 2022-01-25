@@ -1,0 +1,25 @@
+uuid: 1351c856-211a-4c73-a83f-c40ae766acbd
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - govcms_bartik
+_core:
+  default_config_hash: 4vIHuG7m-jsD-YFFQITwn395FD-QbSwjxqES09-fxZQ
+id: govcms_bartik_site_branding
+theme: govcms_bartik
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: 1beda574-5507-4d82-8610-114a1ccdd5db
+langcode: en
+status: true
+dependencies:
+  theme:
+    - govcms_bartik
+_core:
+  default_config_hash: rrDVC2UiJ-BS_p5F86IVED-OoLeMwIM2Du3lN2Xdavw
+id: govcms_bartik_tabs
+theme: govcms_bartik
+region: content
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: govcms_local_tasks
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

@@ -1,0 +1,25 @@
+uuid: 9bb35f4e-3dcb-4f8f-8541-bc2465246aec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.govcms_news_and_media
+  module:
+    - text
+_core:
+  default_config_hash: t3eAiQwrRdPcg9xyeCvTQ9LrIBLvvKgT8OVu_PPdMPU
+id: node.govcms_news_and_media.body
+field_name: body
+entity_type: node
+bundle: govcms_news_and_media
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

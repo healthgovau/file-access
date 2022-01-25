@@ -1,0 +1,19 @@
+uuid: 7210ee8d-e0bc-4f33-8ed6-7d4b366180f3
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+_core:
+  default_config_hash: C3PbqlMXlHl9rXN__4cA7v9SNiioP6c46cHjGyhhX84
+name: 'News and Media'
+type: govcms_news_and_media
+description: 'Use <em>News and Media</em> to reach your target audience directly. '
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

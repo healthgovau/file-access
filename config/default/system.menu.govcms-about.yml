@@ -1,0 +1,10 @@
+uuid: 226de5f5-25b4-4b22-8cbb-7329e984a1cb
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: SrlaY7zRhMYpoFDPSCaGxShg9k0EVApeuYg1O9XlnqM
+id: govcms-about
+label: 'About GovCMS'
+description: 'About GovCMS'
+locked: false

@@ -1,0 +1,25 @@
+uuid: fc67a194-0add-49ea-81ad-401dced01d97
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.govcms_event
+  module:
+    - text
+_core:
+  default_config_hash: 5mhNZ09J5wieTNHuRxWBgv4rHy2rwBsYVDuwU-d1ktY
+id: node.govcms_event.body
+field_name: body
+entity_type: node
+bundle: govcms_event
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

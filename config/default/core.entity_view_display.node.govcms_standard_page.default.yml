@@ -1,0 +1,36 @@
+uuid: d6c95d9b-fa79-4c4c-933d-a34863c7e70b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.govcms_standard_page.body
+    - field.field.node.govcms_standard_page.field_attachments
+    - field.field.node.govcms_standard_page.field_featured_image
+    - field.field.node.govcms_standard_page.field_thumbnail
+    - node.type.govcms_standard_page
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: QTGxKzinl7TYc4fPJryVNw5oqh5UeKCyBtA36TSrBWM
+id: node.govcms_standard_page.default
+targetEntityType: node
+bundle: govcms_standard_page
+mode: default
+content:
+  body:
+    weight: 101
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_attachments: true
+  field_featured_image: true
+  field_thumbnail: true

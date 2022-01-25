@@ -1,0 +1,27 @@
+uuid: b4fc3a6f-f6b0-41a9-bf7a-484d5e1ce782
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.govcms-about
+  module:
+    - system
+  theme:
+    - bartik
+_core:
+  default_config_hash: y4a0VOF0Kz2GVYiIA3EWWaqNSB9FhBpmgsmm84cI9QI
+id: bartik_about_govcms
+theme: bartik
+region: footer_third
+weight: 0
+provider: null
+plugin: 'system_menu_block:govcms-about'
+settings:
+  id: 'system_menu_block:govcms-about'
+  label: 'About GovCMS'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

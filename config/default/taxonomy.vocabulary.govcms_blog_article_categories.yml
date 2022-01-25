@@ -1,0 +1,10 @@
+uuid: 4e56d66f-f486-4f6a-8c40-72326f48b40d
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: uJ-gIRocpOSGxcnZtexfpgbxRPcjPqiRyg691snzVQs
+name: 'Blog article categories'
+vid: govcms_blog_article_categories
+description: ''
+weight: 0

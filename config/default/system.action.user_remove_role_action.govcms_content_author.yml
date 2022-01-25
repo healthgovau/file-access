@@ -1,0 +1,14 @@
+uuid: 0138ae9f-6230-47ca-b0d8-17c794c30ed2
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.govcms_content_author
+  module:
+    - user
+id: user_remove_role_action.govcms_content_author
+label: 'Remove the Content Author role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: govcms_content_author
