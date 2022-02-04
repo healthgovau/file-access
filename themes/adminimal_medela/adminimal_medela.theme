@@ -1,0 +1,50 @@
+<?php
+
+/**
+ * @file
+ * Custom functionality for Adminimal Medela theme.
+ */
+
+use Drupal\field\Entity\FieldConfig;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\adminimal_medela\Helper;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function adminimal_medela_form_node_form_alter(array &$form, FormStateInterface &$form_state, $form_id) {
+  foreach (array_keys($form['actions']) as $action) {
+    if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+      // Unpublish old media files no longer being used.
+      $form['actions'][$action]['#submit'][] = '_adminimal_medela_managed_files_submit';
+    }
+  }
+}
+
+/**
+ * Submit handler to unpublish media from old revisions no longer being used.
+ *
+ * Finds fields that use Managed Files media entity type and
+ * tries to unpublish old files.
+ *
+ * @param array $form
+ *   Drupal form build array.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   Drupal form state object.
+ */
+function _adminimal_medela_managed_files_submit(array $form, FormStateInterface $form_state) {
+  if ($form_state->has('nid')) {
+    $definitions = $form_state->getStorage()['form_display']->get('fieldDefinitions');
+    foreach ($definitions as $definition) {
+      // @todo recursively look through paragraphs for media fields as well as direct media fields.
+      if ($definition instanceof FieldConfig) {
+        if ($definition->getSetting('handler') == 'default:media') {
+          $target_bundles = $definition->getSetting('handler_settings')['target_bundles'];
+          if (isset($target_bundles['h_managed_files']) || isset($target_bundles['h_managed_images'])) {
+            Helper::unpublishMediaFromOldNodeRevisions($form_state->get('nid'), $definition->getName());
+          }
+        }
+      }
+    }
+  }
+}
